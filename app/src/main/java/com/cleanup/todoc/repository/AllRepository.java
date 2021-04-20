@@ -1,7 +1,9 @@
 package com.cleanup.todoc.repository;
 
-import android.arch.lifecycle.LiveData;
+
 import android.os.AsyncTask;
+
+import androidx.lifecycle.LiveData;
 
 import com.cleanup.todoc.database.dao.ProjectDao;
 import com.cleanup.todoc.database.dao.TaskDao;
@@ -20,8 +22,8 @@ public class AllRepository {
     public AllRepository(ProjectDao projectDao, TaskDao taskDao) {
         this.mTaskDao = taskDao;
         this.mProjectDao = projectDao;
-        allProject = this.mProjectDao.loadAllProjects();
         allTasks = this.mTaskDao.loadAllTasks();
+        allProject = this.mProjectDao.loadAllProjects();
     }
 
     public LiveData<List<Project>> getAllProject() {

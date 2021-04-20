@@ -1,10 +1,12 @@
 package com.cleanup.todoc.model;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 import java.util.Comparator;
 
@@ -129,7 +131,7 @@ public class Task {
     /**
      * Sets the timestamp when the task has been created.
      *
-     * @param creationTimestamp the timestamp when the task has been created to set
+    // * @param creationTimestamp the timestamp when the task has been created to set
      */
 
     public long getCreationTimestamp() {

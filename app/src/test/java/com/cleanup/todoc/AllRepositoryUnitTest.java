@@ -1,8 +1,9 @@
 package com.cleanup.todoc;
 
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.cleanup.todoc.database.dao.ProjectDao;
 import com.cleanup.todoc.database.dao.TaskDao;
@@ -35,7 +36,7 @@ public class AllRepositoryUnitTest {
 
     private List<Task> expectedTasks= Arrays.asList(
             new Task(0, 0, "nom", 0),
-            new Task(1,1,"nom2", 1)
+            new Task(1,1,"nom", 1)
 
     );
 
@@ -60,7 +61,7 @@ public class AllRepositoryUnitTest {
 
     @Test
     public void getAllTasksReturnList() {
-        assertEquals(mLiveDataTaskList, mAllRepository.getAllProject());
+        assertEquals(mLiveDataTaskList, mAllRepository.getAllTasks());
     }
 
 

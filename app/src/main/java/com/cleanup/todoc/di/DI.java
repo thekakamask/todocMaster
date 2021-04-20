@@ -1,7 +1,7 @@
 package com.cleanup.todoc.di;
 
 import android.app.Application;
-import android.arch.persistence.room.Database;
+
 
 import com.cleanup.todoc.database.CleanUpDatabase;
 import com.cleanup.todoc.repository.AllRepository;
