@@ -1,9 +1,9 @@
 package com.cleanup.todoc;
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule;
-import android.arch.persistence.room.Database;
+
 import android.content.Context;
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import androidx.test.core.app.ApplicationProvider;
 
 import com.cleanup.todoc.database.CleanUpDatabase;
@@ -20,7 +20,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static java.util.OptionalLong.empty;
+
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;

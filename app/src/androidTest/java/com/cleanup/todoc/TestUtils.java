@@ -1,8 +1,9 @@
 package com.cleanup.todoc;
 
-import android.support.annotation.IdRes;
+
 import android.view.View;
 
+import androidx.annotation.IdRes;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.espresso.PerformException;
 import androidx.test.espresso.UiController;

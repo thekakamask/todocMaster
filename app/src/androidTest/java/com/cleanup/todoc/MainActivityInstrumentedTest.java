@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.cleanup.todoc.di.DI;
 import com.cleanup.todoc.ui.MainActivity;
 
 import org.junit.Rule;
@@ -34,7 +35,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentedTest {
     @Rule
-    public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
+    public CustomActivityRule rule = new CustomActivityRule(MainActivity.class);
 
     @Test
     public void addAndRemoveTask() {
@@ -121,5 +122,16 @@ public class MainActivityInstrumentedTest {
                 .check(matches(withText("zzz Tâche example")));
         onView(withRecyclerView(R.id.list_tasks).atPositionOnView(2, R.id.lbl_task_name))
                 .check(matches(withText("aaa Tâche example")));
+    }
+
+    class CustomActivityRule extends ActivityTestRule<MainActivity> {
+        public CustomActivityRule(Class<MainActivity> activityClass) {
+            super(activityClass);
+        }
+        @Override
+        protected void beforeActivityLaunched() {
+            DI.setInstantiateDbInMemory(true);
+            super.beforeActivityLaunched();
+        }
     }
 }
